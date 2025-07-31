@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,7 +23,7 @@
             $email = $_POST['email'];
             $data_nascimento = $_POST['data_nascimento'];
 
-            $sql = "INSERT INTO 'pessoas'('nome', 'endereco', 'telefone', 'email', 'data_nascimento') VALUES 
+            $sql = "INSERT INTO pessoas(nome, endereco, telefone, email, data_nascimento) VALUES 
             ('$nome','$endereco','$telefone','$email','$data_nascimento')";
 
             if (mysqli_query($conn, $sql)) {
