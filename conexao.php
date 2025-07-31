@@ -1,5 +1,5 @@
 <?php
-    $server = "Localhost";
+    $server = "localhost";
     $user = "root";
     $password = "1q2w3e$";
     $bd = "medconsul";
