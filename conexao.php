@@ -1,7 +1,7 @@
 <?php
     $server = "localhost";
     $user = "root";
-    $password = "1q2w3e$";
+    $password = "";
     $bd = "medconsul";
 
     if ( mysqli_connect($server, $user, $password, $bd) ) {
