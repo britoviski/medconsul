@@ -4,8 +4,9 @@
     $password = "1q2w3e$";
     $bd = "medconsul";
 
-    if (mysqli_connect($server, $user, $password, $bd)){
+    if ( mysqli_connect($server, $user, $password, $bd) ) {
         echo "Conectado!";
     } else
         echo "Erro!";
+        
 ?>
