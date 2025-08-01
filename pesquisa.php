@@ -8,18 +8,33 @@
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Cadastro</title>
+    <title>Pesquisar</title>
   </head>
   <body>
+
+    <?php
+        
+        $pesquisa = $_POST['busca'] ?? '';
+
+        include "conexao.php";
+
+        $sql = "SELECT * FROM pessoas WHERE nome LIKE '%$pesquisa%'";
+
+        $dados = mysqli_query($conn, $sql);
+
+        
+
+    ?>
+
     <div class="container">
         <div class="row">
             <div class="col">
                 <h1>Pesquisar</h1>
                 <nav class="navbar navbar-light bg-light">
                     <div class="container-fluid">
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        <form class="d-flex" action="pesquisa.php" method="POST">
+                            <input class="form-control me-2" type="search" placeholder="Nome" aria-label="Search" name="busca" autofocus>
+                            <button class="btn btn-outline-success" type="submit">Pesquisar</button>
                         </form>
                     </div>
                 </nav> 
@@ -27,30 +42,45 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Endereço</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Data de Nascimento</th>
+                        <th scope="col">Funções</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                        </tr>
+
+                        <?php
+
+                        while ($linha = mysqli_fetch_assoc($dados) ) {
+                            $cod_pessoa = $linha['cod_pessoa'];
+                            $nome = $linha['nome'];
+                            $endereco = $linha['endereco'];
+                            $telefone = $linha['telefone'];
+                            $email = $linha['email'];
+                            $data_nascimento = $linha['data_nascimento'];
+                            $data_nascimento = mostra_data($data_nascimento);
+
+                            echo "<tr>
+                                    <th scope='row'>$nome</th>
+                                    <td>$endereco</td>
+                                    <td>$telefone</td>
+                                    <td>$email</td>
+                                    <td>$data_nascimento</td>
+                                    <td>
+                                    <a href='cadastro_edit.php?id=$cod_pessoa' class='btn btn-warning'>Editar</a>
+                                    <a href='#' class='btn btn-danger'>Excluir</a>
+                                    </td>                        
+                                   </tr>";
+                            
+                            }
+                       
+
+                        ?>
+
+                                              
                     </tbody>
                 </table>
 
