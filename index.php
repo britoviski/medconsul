@@ -13,36 +13,16 @@
   <body>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <h1>Cadastro</h1>
-                <form action="cadastro_script.php" method="POST">
-                <form>
-                    <div class="mb-3">
-                        <label for="nome">Nome completo</label>
-                        <input type="text" class="form-control" name="nome">                        
-                    </div>
-                    <div class="mb-3">
-                        <label for="endereco">Endereço</label>
-                        <input type="text" class="form-control" name="endereco">                        
-                    </div>
-                    <div class="mb-3">
-                        <label for="telefone">Telefone</label>
-                        <input type="text" class="form-control" name="telefone">                        
-                    </div>
-                    <div class="mb-3">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" name="email">                        
-                    </div>
-                    <div class="mb-3">
-                        <label for="email">Data de Nascimento</label>
-                        <input type="date" class="form-control" name="data_nascimento">                        
-                    </div>
-                    <div class="mb-3">                        
-                        <input type="submit" class="btn btn-success">                        
-                    </div>
-
-                </form>
-            </div>
+            <div class="col">              
+                    <div class="jumbotron">
+                    <h1 class="display-4">Cadastro Web</h1>
+                    <p class="lead">Sistema de Consultas Médicas.</p>
+                    <hr class="my-4">
+                    <p class="lead">Acesse as funções.</p>
+                    <a class="btn btn-primary btn-lg" href="cadastro.php"role="button">Cadastro</a>
+                    <a class="btn btn-primary btn-lg" href="pesquisa.php"role="button">Pesquisa</a>
+                </div>
+             
         </div>
     </div>
 

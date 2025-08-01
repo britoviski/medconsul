@@ -27,11 +27,12 @@
             ('$nome','$endereco','$telefone','$email','$data_nascimento')";
 
             if (mysqli_query($conn, $sql)) {
-                echo "$nome Cadastrado com sucesso!";
+                mensagem ("$nome Cadastrado com sucesso!", 'success');
             } else
-                echo "$nome Não cadastrado!";
+                mensagem ("$nome Não cadastrado!", 'danger');
             
             ?>
+            <a href="index.php" class="btn btn-primary">Voltar</a>
         </div>
     </div>
 
