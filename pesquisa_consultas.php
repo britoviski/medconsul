@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Pesquisar</title>
+    <title>Pesquisar Medicos</title>
   </head>
   <body>
 
@@ -18,7 +18,7 @@
 
         include "conexao.php";
 
-        $sql = "SELECT * FROM pessoas WHERE nome LIKE '%$pesquisa%'";
+        $sql = "SELECT * FROM medicos WHERE nome LIKE '%$pesquisa%'";
 
         $dados = mysqli_query($conn, $sql);
 
@@ -29,12 +29,12 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1>Pesquisar Paciêntes</h1>
+                <h1>Pesquisar Médicos</h1>
                 <nav class="navbar navbar-light bg-light">
                     <div class="container-fluid">
-                        <form class="d-flex" action="pesquisa.php" method="POST">
+                        <form class="d-flex" action="pesquisa_medicos.php" method="POST">
                             <input class="form-control me-2" type="search" placeholder="Nome" aria-label="Search" name="busca" autofocus>
-                            <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                            <button class="btn btn-outline-success btn-lg" type="submit">Pesquisar Medicos</button>
                         </form>
                     </div>
                 </nav> 
@@ -42,6 +42,7 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
+                        <th scope="col">CRM</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Endereço</th>
                         <th scope="col">Telefone</th>
@@ -56,6 +57,7 @@
 
                         while ($linha = mysqli_fetch_assoc($dados) ) {
                             $cod_pessoa = $linha['cod_pessoa'];
+                            $crm = $linha['crm'];
                             $nome = $linha['nome'];
                             $endereco = $linha['endereco'];
                             $telefone = $linha['telefone'];
@@ -64,13 +66,14 @@
                             $data_nascimento = mostra_data($data_nascimento);
 
                             echo "<tr>
-                                    <th scope='row'>$nome</th>
+                                    <th scope='row'>$crm</th>
+                                    <td>$nome</td>
                                     <td>$endereco</td>
                                     <td>$telefone</td>
                                     <td>$email</td>
                                     <td>$data_nascimento</td>
                                     <td>
-                                    <a href='cadastro_edit.php?id=$cod_pessoa' class='btn btn-warning'>Editar</a>
+                                    <a href='cadastro_edit_medicos.php?id=$cod_pessoa' class='btn btn-warning'>Editar</a>
                                     <a href='#' class='btn btn-danger'>Excluir</a>
                                     </td>                        
                                    </tr>";

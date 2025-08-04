@@ -8,15 +8,19 @@
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Cadastro</title>
+    <title>Cadastro de Consultas</title>
   </head>
   <body>
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1>Cadastro Paciêntes</h1>
-                <form action="cadastro_script.php" method="POST">
+                <h1>Cadastro de Consultas</h1>
+                <form action="cadastro_script_consultas.php" method="POST">
                 <form>
+                    <div class="mb-3">
+                        <label for="crm">CRM</label>
+                        <input type="text" class="form-control" name="crm" required>                        
+                    </div>
                     <div class="mb-3">
                         <label for="nome">Nome completo</label>
                         <input type="text" class="form-control" name="nome" required>                        

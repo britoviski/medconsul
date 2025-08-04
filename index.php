@@ -19,9 +19,12 @@
                     <p class="lead">Sistema de Consultas Médicas.</p>
                     <hr class="my-4">
                     <p class="lead">Acesse as funções.</p>
-                    <a class="btn btn-primary btn-lg" href="cadastro.php"role="button">Cadastro</a>
-                    <a class="btn btn-primary btn-lg" href="cadastro_medicos.php"role="button">Cadastro de Médicos</a>
-                    <a class="btn btn-primary btn-lg" href="pesquisa.php"role="button">Pesquisa</a>
+                    <a class="btn btn-primary btn-block" href="cadastro.php"role="button">Cadastro de Paciêntes</a>
+                    <a class="btn btn-primary btn-block" href="pesquisa.php"role="button">Pesquisa de Pacientes</a>
+                    <a class="btn btn-primary btn-block" href="prontuarios.php"role="button">Cadastro de Consultas</a>
+                    <a class="btn btn-primary btn-block" href="cadastro_medicos.php"role="button">Cadastro de Médicos</a> 
+                    <a class="btn btn-primary btn-block" href="pesquisa_medicos.php"role="button">Pesquisa Médicos</a>
+                    
                 </div>
              
         </div>
