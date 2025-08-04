@@ -14,8 +14,8 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1>Cadastro</h1>
-                <form action="cadastro_script.php" method="POST">
+                <h1>Cadastro de Médicos</h1>
+                <form action="cadastro_script_medicos.php" method="POST">
                 <form>
                     <div class="mb-3">
                         <label for="crm">CRM</label>

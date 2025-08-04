@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,17 +14,26 @@
   <body>
     <div class="container">
         <div class="row">
-            <div class="col">              
-                    <div class="jumbotron">
-                    <h1 class="display-4">Cadastro Web</h1>
-                    <p class="lead">Sistema de Consultas Médicas.</p>
-                    <hr class="my-4">
-                    <p class="lead">Acesse as funções.</p>
-                    <a class="btn btn-primary btn-lg" href="cadastro.php"role="button">Cadastro</a>
-                    <a class="btn btn-primary btn-lg" href="cadastro_medicos.php"role="button">Cadastro de Médicos</a>
-                    <a class="btn btn-primary btn-lg" href="pesquisa.php"role="button">Pesquisa</a>
-                </div>
-             
+            <?php
+            include "conexao.php";
+
+            $crm = $_POST['crm'];
+            $nome = $_POST['nome'];
+            $endereco = $_POST['endereco'];
+            $telefone = $_POST['telefone'];
+            $email = $_POST['email'];
+            $data_nascimento = $_POST['data_nascimento'];
+
+            $sql = "INSERT INTO medicos(crm, nome, endereco, telefone, email, data_nascimento) VALUES 
+            ('$crm','$nome','$endereco','$telefone','$email','$data_nascimento')";
+
+            if (mysqli_query($conn, $sql)) {
+                mensagem ("$nome Cadastrado com sucesso!", 'success');
+            } else
+                mensagem ("$nome Não cadastrado!", 'danger');
+            
+            ?>
+            <a href="index.php" class="btn btn-primary">Voltar</a>
         </div>
     </div>
 
