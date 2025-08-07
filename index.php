@@ -21,7 +21,7 @@
                     <p class="lead">Acesse as funções.</p>
                     <a class="btn btn-primary btn-block" href="cadastro.php"role="button">Cadastro de Paciêntes</a>
                     <a class="btn btn-primary btn-block" href="pesquisa.php"role="button">Pesquisa de Pacientes</a>
-                    <a class="btn btn-primary btn-block" href="prontuarios.php"role="button">Cadastro de Consultas</a>
+                    <a class="btn btn-primary btn-block" href="cadastro_consultas.php"role="button">Cadastro de Consultas</a>
                     <a class="btn btn-primary btn-block" href="cadastro_medicos.php"role="button">Cadastro de Médicos</a> 
                     <a class="btn btn-primary btn-block" href="pesquisa_medicos.php"role="button">Pesquisa Médicos</a>
                     
